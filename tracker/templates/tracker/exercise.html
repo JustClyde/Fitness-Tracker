@@ -1,0 +1,108 @@
+{% extends "tracker/layout.html" %}
+{% load static %}
+
+{% block script %}
+<script src="{% static 'tracker/script.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div id="exercise-tracker">
+
+    <div class="container">
+        <h2 class="text-center mb-4">{{ user.first_name }}'s Exercise Diary</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Cardiovascular Exercise:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for exercise in cardio_exercises %}
+                        <tr>
+                            <td>{{ exercise.exercise }}</td>
+                            <td>{{ exercise.calories }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'requestExercise' exercise='cardio' %}">
+                    <button class="btn btn-primary mt-2 add-exercise">Add Exercise</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Strength Training:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for exercise in strength_training_exercises %}
+                        <tr>
+                            <td>{{ exercise.exercise }}</td>
+                            <td>{{ exercise.calories }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'requestExercise' exercise='strength_training' %}">
+                    <button class="btn btn-primary mt-2 add-exercise">Add Exercise</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Other Activities:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Minutes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for exercise in other_exercises %}
+                        <tr>
+                            <td>{{ exercise.exercise }}</td>
+                            <td>{{ exercise.calories }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'requestExercise' exercise='other' %}">
+                    <button class="btn btn-primary mt-2 add-exercise">Add Activity</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Total:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Calories Burned</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ total_calories_burned }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

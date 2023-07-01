@@ -1,0 +1,149 @@
+{% extends "tracker/layout.html" %}
+{% load static %}
+
+{% block script %}
+{% endblock %}
+
+{% block body %}
+<div id="food-diary">
+
+    <div class="container">
+        <h2 class="text-center mb-4 ">{{ user.first_name }}'s Food Diary for {{ today|date:"F d" }}</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Breakfast:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                            <th>Protein (g)</th>
+                            <th class="d-none d-md-table-cell">Carbs (g)</th>
+                            <th class="d-none d-md-table-cell">Sodium (mg)</th>
+                            <th class="d-none d-md-table-cell">Cholesterol (mg)</th>
+                            <th class="d-none d-md-table-cell">Sugar (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food_item in breakfast_food_items %}
+                        <tr>
+                            <td>{{ food_item.name }}</td>
+                            <td>{{ food_item.calories }}</td>
+                            <td>{{ food_item.protein }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.carbs }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.sodium }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.cholesterol }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.sugar }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'addFood' meal='breakfast' %}">
+                    <button class="btn btn-primary mt-2 add-food">Add Food</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card mb-4 ">
+            <div class="card-body">
+                <h3 class="card-title">Lunch:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                            <th>Protein (g)</th>
+                            <th class="d-none d-md-table-cell">Carbs (g)</th>
+                            <th class="d-none d-md-table-cell">Sodium (mg)</th>
+                            <th class="d-none d-md-table-cell">Cholesterol (mg)</th>
+                            <th class="d-none d-md-table-cell">Sugar (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food_item in lunch_food_items %}
+                        <tr>
+                            <td>{{ food_item.name }}</td>
+                            <td>{{ food_item.calories }}</td>
+                            <td>{{ food_item.protein }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.carbs }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.sodium }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.cholesterol }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.sugar }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'addFood' meal='lunch' %}">
+                    <button class="btn btn-primary mt-2 add-food">Add Food</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card mb-4 ">
+            <div class="card-body">
+                <h3 class="card-title">Dinner:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                            <th>Protein (g)</th>
+                            <th class="d-none d-md-table-cell">Carbs (g)</th>
+                            <th class="d-none d-md-table-cell">Sodium (mg)</th>
+                            <th class="d-none d-md-table-cell">Cholesterol (mg)</th>
+                            <th class="d-none d-md-table-cell">Sugar (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food_item in dinner_food_items %}
+                        <tr>
+                            <td>{{ food_item.name }}</td>
+                            <td>{{ food_item.calories }}</td>
+                            <td>{{ food_item.protein }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.carbs }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.sodium }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.cholesterol }}</td>
+                            <td class="d-none d-md-table-cell">{{ food_item.sugar }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'addFood' meal='dinner' %}">
+                    <button class="btn btn-primary mt-2 add-food">Add Food</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card mb-4 ">
+            <div class="card-body">
+                <h3 class="card-title">Total:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Calories</th>
+                            <th>Protein (g)</th>
+                            <th class="d-none d-md-table-cell">Carbs (g)</th>
+                            <th class="d-none d-md-table-cell">Sodium (mg)</th>
+                            <th class="d-none d-md-table-cell">Cholesterol (mg)</th>
+                            <th class="d-none d-md-table-cell">Sugar (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ total_calories }}</td>
+                            <td>{{ total_protein }}</td>
+                            <td class="d-none d-md-table-cell">{{ total_carbs }}</td>
+                            <td class="d-none d-md-table-cell">{{ total_sodium }}</td>
+                            <td class="d-none d-md-table-cell">{{ total_cholesterol }}</td>
+                            <td class="d-none d-md-table-cell">{{ total_sugar }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

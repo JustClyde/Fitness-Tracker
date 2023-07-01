@@ -1,0 +1,31 @@
+{% extends "tracker/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div id="add-exercise">
+
+    <div class="container">
+        <h2 class="text-center mb-4">Add Exercise</h2>
+
+        <div class="form-group">
+            <label for="exercise-search">Search Exercise:</label>
+            <input type="text" class="form-control" id="exercise-search" name="exercise_search" value="{{ exercise_name }}" placeholder="Enter exercise name" required>
+        </div>
+        <div class="form-group">
+            <label for="exercise-minutes">Minutes:</label>
+            <input type="number" class="form-control" id="exercise-minutes" min="1" required>
+        </div>
+        <button class="btn btn-primary" onclick="searchExercise()">Search</button>
+        <br>
+        <br>
+
+        <div id="exercise-results"></div>
+        <br>
+        <button id="add-x-btn" class="btn btn-primary" onclick="submitExercise()" style="display:none">Add Exercise</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'tracker/addX.js' %}"></script>
+{% endblock %}
