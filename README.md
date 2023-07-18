@@ -25,6 +25,13 @@ The Fitness Tracker website was developed using the following technologies:
 - Deployment: 
   - ![Railway](https://img.shields.io/badge/-Railway-555?style=flat&logo=railway&logoColor=ffffff)
 
+## Screenshots from the app
+![screenshot0](media/foodDiary.png)
+![screenshot1](media/addFood.png)
+![screenshot2](screenshots/xDiary.png)
+![screenshot3](media/addX.png)
+
+
 ## Features
 
 - User Registration: Users can register by providing their name, sex, date of birth (DOB), height, current weight, goal weight, and daily activity level.
