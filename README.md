@@ -40,45 +40,39 @@ The Fitness Tracker website was developed using the following technologies:
 - Nutritional Information: Users can search for nutritional information about various foods to make informed dietary choices.
 - Exercise Tracking: Users can track their exercise and monitor the calories burned.
 
-
-## Installation
-
-To run the Fitness Tracker website locally, follow these steps:
-
-1. Clone the repository:
-
-   ```
-      git clone https://github.com/sulabhkatila/fitness-tracker.git
-      cd fitness-tracker
-   ```
-
-2. Install the required dependencies:
-   ```
-      pip install -r requirements.txt
-   ```
-
-3. Set up environment variables:
-   Create a .env file in the project root directory and provide the following variables:
-   ```
-      SECRET_KEY=your_secret_key
-      API_KEY=your_api_key
-      DEBUG=True
-   ```
-
-4. Run database migrations:
-   ```
-      python manage.py migrate
-   ```
-
-5. Start the development server:
-   ```
-      python manage.py runserver
-   ```
-
-6. Access the website at http://localhost:8000.
-
 ## Contributing
-Contributions to the Fitness Tracker website are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request to the repository.
+There are several ways you can contribute to this project:
+
+1. **Bug Reports**: If you find any issues, bugs, or unexpected behavior while using the website, please open an issue in the repository.
+
+2. **Feature Requests**: Have an idea for a new feature or an enhancement to an existing one? Let me know!
+
+3. **Code Contributions**: Submit a pull request!
+
+### Gettiing started with Code Contributions
+1. **Fork the Repository**: Fork this repo using the "Fork" button at the top right corner of this page.
+
+2. **Clone Your Fork**: Clone the forked repository to your local machine using the following command, replacing `yourUsername` with your GitHub username:
+   ```
+   git clone https://github.com/yourUsername/fitness-tracker.git
+   cd fitness-tracker
+   ```
+3. **Install Dependencies**:
+   ```
+   pip install -r requirements.txt
+   ```
+4. **Create a Branch**: Create a new branch, replacing `yourBranch` with the name of your branch:
+   ```
+   git branch yourBranch
+   git checkout yourBranch
+   ```
+5. **Make Changes**: Make the necessary changes to the code.
+   ```
+   git add .
+   git commit -m "description of the change"
+   git push
+   ```
+6. **Submit a pull request**: Commit and push the changes your branch to your forked repository. Then, submit a pull request.
 
 ## License
 This project is licensed under the MIT License.
