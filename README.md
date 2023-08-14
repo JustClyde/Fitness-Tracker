@@ -1,10 +1,10 @@
-# Fitness Tracker
+# [Fitness Tracker](https://fitness-tracker-sigma.vercel.app/)
 https://fitness-tracker-sigma.vercel.app/
 ---
 
 ## Overview
 
-The Fitness Tracker website is designed to help users manage their fitness goals effectively. It provides features for tracking daily calories, reviewing food intake, searching for nutritional information, and tracking exercise calories burned.
+The [Fitness Tracker website](https://fitness-tracker-sigma.vercel.app/) is designed to help users manage their fitness goals effectively. It provides features for tracking daily calories, reviewing food intake, searching for nutritional information, and tracking exercise calories burned.
 
 ## Technologies Used
 
