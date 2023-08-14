@@ -1,5 +1,5 @@
 # Fitness Tracker
-https://web-production-2f98.up.railway.app/
+https://fitness-tracker-sigma.vercel.app/
 ---
 
 ## Overview
